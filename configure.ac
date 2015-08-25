@@ -13,7 +13,7 @@ AC_PROG_CXX
 
 # Checks for libraries.
 AC_CHECK_LIB(mpi, MPI_Init, [], [echo "Please install MPI first!"; exit -1])
-AC_CHECK_LIB(python, Py_Initialize, [], [echo "Please install Python first!"; exit -1])
+#AC_CHECK_LIB(python, Py_Initialize, [], [echo "Please install Python first!"; exit -1])
 
 # Checks for header files.
 AC_CHECK_HEADERS([stdint.h])
