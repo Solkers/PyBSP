@@ -6,6 +6,12 @@
 /* Define to 1 if you have the `mpi' library (-lmpi). */
 #undef HAVE_LIBMPI
 
+/* Define to 1 if you have the `mpi_cxx' library (-lmpi_cxx). */
+#undef HAVE_LIBMPI_CXX
+
+/* Define to 1 if you have the `python2.7' library (-lpython2.7). */
+#undef HAVE_LIBPYTHON2_7
+
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
 
@@ -15,7 +21,7 @@
 /* Define to 1 if you have the <numpy/arrayobject.h> header file. */
 #undef HAVE_NUMPY_ARRAYOBJECT_H
 
-/* Define to 1 if you have the <python.h> header file. */
+/* Define to 1 if you have the <Python.h> header file. */
 #undef HAVE_PYTHON_H
 
 /* Define to 1 if you have the <stdint.h> header file. */

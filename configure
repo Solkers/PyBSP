@@ -4396,7 +4396,92 @@ else
   echo "Please install MPI first!"; exit -1
 fi
 
-#AC_CHECK_LIB(python, Py_Initialize, [], [echo "Please install Python first!"; exit -1])
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lmpi_cxx" >&5
+$as_echo_n "checking for main in -lmpi_cxx... " >&6; }
+if ${ac_cv_lib_mpi_cxx_main+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  ac_check_lib_save_LIBS=$LIBS
+LIBS="-lmpi_cxx  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+
+int
+main ()
+{
+return main ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"; then :
+  ac_cv_lib_mpi_cxx_main=yes
+else
+  ac_cv_lib_mpi_cxx_main=no
+fi
+rm -f core conftest.err conftest.$ac_objext \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_mpi_cxx_main" >&5
+$as_echo "$ac_cv_lib_mpi_cxx_main" >&6; }
+if test "x$ac_cv_lib_mpi_cxx_main" = xyes; then :
+  cat >>confdefs.h <<_ACEOF
+#define HAVE_LIBMPI_CXX 1
+_ACEOF
+
+  LIBS="-lmpi_cxx $LIBS"
+
+fi
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for Py_Initialize in -lpython2.7" >&5
+$as_echo_n "checking for Py_Initialize in -lpython2.7... " >&6; }
+if ${ac_cv_lib_python2_7_Py_Initialize+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  ac_check_lib_save_LIBS=$LIBS
+LIBS="-lpython2.7  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char Py_Initialize ();
+int
+main ()
+{
+return Py_Initialize ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"; then :
+  ac_cv_lib_python2_7_Py_Initialize=yes
+else
+  ac_cv_lib_python2_7_Py_Initialize=no
+fi
+rm -f core conftest.err conftest.$ac_objext \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_python2_7_Py_Initialize" >&5
+$as_echo "$ac_cv_lib_python2_7_Py_Initialize" >&6; }
+if test "x$ac_cv_lib_python2_7_Py_Initialize" = xyes; then :
+  cat >>confdefs.h <<_ACEOF
+#define HAVE_LIBPYTHON2_7 1
+_ACEOF
+
+  LIBS="-lpython2.7 $LIBS"
+
+else
+  echo "Please install Python first!"; exit -1
+fi
+
 
 # Checks for header files.
 ac_ext=c
@@ -4820,10 +4905,10 @@ fi
 
 done
 
-for ac_header in python.h
+for ac_header in Python.h
 do :
-  ac_fn_c_check_header_mongrel "$LINENO" "python.h" "ac_cv_header_python_h" "$ac_includes_default"
-if test "x$ac_cv_header_python_h" = xyes; then :
+  ac_fn_c_check_header_mongrel "$LINENO" "Python.h" "ac_cv_header_Python_h" "$ac_includes_default"
+if test "x$ac_cv_header_Python_h" = xyes; then :
   cat >>confdefs.h <<_ACEOF
 #define HAVE_PYTHON_H 1
 _ACEOF
