@@ -55,6 +55,8 @@ void NameSpace::deleteObject(std::string objectName, bool collective) {
 }
 
 void NameSpace::clear() {
+    if (_objects.empty())
+        return;
     bool finalizing = BSP::Runtime::getActiveRuntime()->isFinalizing();
     for (std::map<std::string, NamedObject*>::iterator iterator =
             _objects.begin(); iterator != _objects.end(); ++iterator) {
