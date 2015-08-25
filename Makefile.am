@@ -1,6 +1,6 @@
 AUTOMAKE_OPTIONS = subdir-objects
 NUMPY=`python -c "import numpy;print numpy.__path__[0]"`
-AM_CXXFLAGS = -Iinclude/runtime -Iinclude/frontend `python-config --includes` -I$(NUMPY)/core/include -Wall -O3
+AM_CXXFLAGS = -I/usr/include/mpi -Iinclude/runtime -Iinclude/frontend `python-config --includes` -I$(NUMPY)/core/include -Wall -O3
 AM_LDFLAGS = -Wall -O3 -lmpi `python-config --ldflags`
 
 bin_PROGRAMS = pybsp

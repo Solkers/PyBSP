@@ -7,14 +7,11 @@
 /* Define to 1 if you have the `mpi' library (-lmpi). */
 #define HAVE_LIBMPI 1
 
-/* Define to 1 if you have the `python' library (-lpython). */
-#define HAVE_LIBPYTHON 1
-
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
 
 /* Define to 1 if you have the <mpi.h> header file. */
-#define HAVE_MPI_H 1
+/* #undef HAVE_MPI_H */
 
 /* Define to 1 if you have the <numpy/arrayobject.h> header file. */
 /* #undef HAVE_NUMPY_ARRAYOBJECT_H */
